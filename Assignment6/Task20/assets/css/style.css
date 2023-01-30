@@ -1,0 +1,943 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Patua+One&family=Roboto:wght@100;300;400;700&display=swap');
+
+:root{
+    --black:#262626;
+    --grey:#626262;
+    --yellow:#eea200;
+    --border-color:rgba(0,0,0,.05);
+    --textdark:#444444;
+    --lightgray:#8F8F8F;
+    --lightwhite:#f5f5f5;
+    --smokewhite:#e3e3e3;
+    --lightdark:#545454;
+    --gray:#b2b2b2;
+    --fa-style-family:"Font Awesome 6 Brands";
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--black);
+}
+
+/* Header Section */
+
+header{
+    min-width: 100%;
+    height: 100vh;
+    background-image: url("../images/home_mechanic_slide_bg.jpg");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width:500px) {
+    header{
+        height: 75vh;
+    }
+}
+
+
+/* nav-bar Section */
+
+.nav-bar{
+    width: 89%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -6%;
+}
+
+
+/* nav-bar Left Section */
+
+.left{
+    width: 93%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.left::after{
+    content: "";
+    display: block;
+    width: 1%;
+    height: 101%;
+    position: absolute;
+    left: 100%;
+    top: -3px;
+    transform: skewX(0deg) skewY(-24deg);
+    background-color: var(--smokewhite);
+}
+
+
+.logo{
+    width: 22%;
+    height: auto;
+}
+
+
+
+/* Navigation bar Section */
+.left .navbar{
+    width: 70%;
+    height: auto;
+}
+.navbar nav{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav a{
+    color: var(--grey);
+    text-decoration: none;
+    padding: 10px 0px;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar nav a > span{
+    padding: 20px;
+}
+
+.left-border{
+    border-left: 1px solid var(--border-color);
+}
+
+
+.navbar nav a::before{
+    content: "";
+    width: 0%;
+    height: 4px;
+    position: absolute;
+    top: -3px;
+    background-color: var(--yellow);
+    transition: .2s;
+}
+
+.navbar nav a:hover,.navbar nav .active{
+    color: var(--yellow);
+}
+
+.navbar nav a:hover::before,.navbar nav .active::before{
+    width: 100%;
+}
+
+
+/* responsive nav bar */
+.dropbtn {
+    background-color: transparent;
+    color: var(--yellow);
+    padding: 16px;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+
+.responsive-navbar {
+    position: relative;
+    display: none;
+}
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: -120px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    width: max-content;
+    text-decoration: none;
+    display: block;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    padding:20px;
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-content a::before{
+    content: "";
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--yellow);
+    transition: .3s;
+  }
+  
+  .dropdown-content a:hover {
+    color: var(--yellow);
+}
+
+.dropdown-content a:hover::before{
+    width: 100%;
+}
+  
+.responsive-navbar:hover .dropdown-content {
+    display: block;
+}
+
+@media (max-width:1014px) {
+    .responsive-navbar{
+        display: inline-block;
+    }
+    .navbar nav{
+        display: none;
+    }
+    .left{
+        height: 80px;
+        padding-left: 25px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .left .navbar{
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+/* Searchbox Section */
+.searchbox{
+    width: 6%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:-5px;
+    left: -1px;
+    background-color: var(--lightwhite);
+    z-index: 1;
+}
+
+.searchbox a{
+    color: var(--textdark);
+    text-decoration: none;
+}
+
+@media (max-width:800px) {
+    .searchbox{
+        display: none;
+    }
+    .left::after{
+        display: none;
+    }
+    .left{
+        width: 100%;
+    }
+}
+
+/* Header Content Section */
+.header-content{
+    width:80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    position: relative;
+    top: -16%;
+}
+
+
+/* Main heading Section */
+.main-heading{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.main-heading p{
+    color: rgb(255, 255, 255);
+    font-family: 'Patua One', cursive;
+    font-size: 3rem;
+}
+
+.main-heading p span{
+    color: var(--yellow);
+}
+
+/* Main para Section */
+
+.main-para{
+    width: 40%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.main-para p{
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+/* Button of Main conatiner  */
+.header-btn{
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+    margin-top: 5px;
+}
+
+.header-btn a{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    padding: 10px 13px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: var(--yellow);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.header-btn a:hover{
+    background-color: #eea300d2;
+}
+
+
+@media (max-width:758px) {
+    .main-para{
+        width: 50%;
+    }
+}
+
+/* Container Section start from here */
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Service container  */
+
+.service-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+/* Heading of every content container */
+
+.h-2{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.h-2 h2{
+    font-family: 'Patua One', cursive;
+    font-size: 2.625rem;
+    color: #ffffff;
+}
+
+
+/* style of service content container start from here */
+.service-content{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px 0px;
+}
+
+/* services flexitems style from here */
+.s-flexitem{
+    width: 32.5%;
+    height: auto;
+    padding-bottom: 40px;
+}
+
+/* This is used to make horizontal line at the end of first 3 flexitem */
+.bt-border{
+    border-bottom: 1px solid #8f8f8f1f;
+}
+
+.s-flexitem a{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* icons in the service flexitem  of service container */
+
+.s-icon{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    background-image: url("../images/stripes_3_b.png");
+}
+
+.s-icon i{
+    font-size: 2.3rem;
+}
+
+/* description in the service flexitem of service container */
+
+.s-desc{
+    width: 75%;
+    height: auto;
+}
+
+.s-heading{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.s-heading p{
+    font-family: 'Patua One', cursive;
+    font-size: 1.3125rem;
+}
+
+.s-para{
+    width: 98%;
+    height: auto;
+}
+
+.s-para p{
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+@media (max-width:1055px) {
+    .s-flexitem{
+        width: 49%;
+    }
+    .bt-border1{
+        border-bottom: 1px solid #8f8f8f1f;
+    }
+}
+
+@media (max-width:698px) {
+    .s-flexitem{
+        width: 100%;
+        padding-bottom: 25px;
+    }
+    .s-desc{
+        width: 85%;
+    }
+}
+
+
+/* Working Experience Container start from here */
+.w-experience-container{
+    width: 100%;
+    height: auto;
+    background-image: url("../images/home_mechanic_video.jpg");
+    background-attachment: fixed;
+    background-position:top;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 80px 0px;
+}
+
+/* style of working experience content start from here */
+.experience-content{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0px;
+    flex-wrap: wrap;
+}
+
+/* flexitems of the working experience content container */
+.exp-flexitem{
+    width: 23%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+
+/* Experience Flexitem Number Heading */
+
+.exp-number{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.exp-number p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5.5rem;
+    color: var(--yellow);
+}
+
+.exp-heading{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: relative;
+    margin-top: -4%;
+    margin-bottom: 15px;
+}
+
+.exp-heading p{
+    font-size: 1.5625rem;
+    font-family: 'Patua One', cursive;
+}
+
+/* horizontal line in the middle of the working experience flexitem */
+.exp-flexitem hr{
+    width: 45%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* paragraph of the exp flexitem */
+.exp-para{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.exp-para p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width:810px) {
+    .exp-flexitem{
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:500px) {
+    .exp-flexitem{
+        width: 100%;
+    }
+    .exp-flexitem hr{
+        width: 30%;
+    }
+}
+
+
+/* Workshop Section Start from here */
+
+.workshop-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #454545;
+}
+
+/* flexitems of the workshop content container */
+
+.workshop-content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.w-flexitem{
+    width: 25%;
+    height: auto;
+    overflow: hidden;
+}
+
+.w-flexitem a{
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+
+.w-flexitem a img{
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform .3s ease-in;
+}
+
+.w-flexitem a:hover img{
+    transform:scale(1.02);
+}
+
+@media (max-width:886px) {
+    .w-flexitem{
+        width: 50%;
+    }
+}
+
+@media (max-width:500px) {
+    .w-flexitem{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* About Container Section */
+.about-container{
+    width: 100%;
+    height: auto;
+    background-color: var(--gray);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 60px 0px;
+}
+
+
+.about-desc,.g-map{
+    width: 45%;
+    height: auto;
+}
+
+.about-desc{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 10px;
+}
+
+/* google maps style */
+.g-map iframe{
+    width: 100%;
+    height: 250px;
+    border: none;
+}
+
+
+.client-review,.about-us{
+    width: 48%;
+    height: auto;
+}
+
+
+
+/* .client-review Section */
+
+.client-review{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.h-3{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.h-3 h3{
+    font-family: 'Patua One', cursive;
+    font-size: 1.875rem;
+    color: var(--textdark);
+    font-weight: 100;
+}
+
+
+.client-para{
+    width: 95%;
+    height: auto;
+    margin-left: 20px;
+    background-image: url("../images/textline.png");
+    background-repeat: repeat-y;
+    margin-top: 5px;
+}
+
+.client-para p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: var(--textdark);
+    line-height: 31px;
+    margin-top: 5px;
+}
+
+.client-para i{
+    position: absolute;
+    font-size: 3rem;
+    color: var(--lightdark);
+    opacity: 0.3;
+    top: 16%;
+    left: 0;
+}
+
+/* About us Section */
+
+.about-us{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.para-1,.para-2{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.para-1 p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--grey);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.para-2 p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--grey);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* Read more button */
+
+.rm-btn{
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.rm-btn a{
+    padding: 10px 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color:var(--lightgray);
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 3%), inset 0px 4px 3px -2px rgb(0 0 0 / 7%);
+    text-decoration: none;
+}
+
+.rm-btn a:hover{
+    background-color: var(--lightdark);
+}
+
+
+
+@media (max-width:886px) {
+    .about-container{
+        flex-direction: column;
+    }
+    .about-desc,.g-map{
+        width: 90%;
+        height: auto;
+    }
+
+    .about-desc{
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width:500px) {
+    .about-desc{
+        flex-direction: column;
+    }
+    .client-review,.about-us{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Brand container content start from here */
+.brand-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 50px 0px;
+}
+
+
+.brand-content{
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    flex-wrap: wrap;
+}
+
+.h-small{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.h-small h2{
+    font-family: 'Patua One', cursive;
+    color: var(--textdark);
+    font-size: 1.9rem;
+    font-weight: 100;
+}
+
+/* flexitems of the brand container content */
+.bd-flexitem{
+    width: 16%;
+    height: auto;
+    background-color: rgba(0,0,0,.01);
+}
+
+.bd-flexitem a{
+    width: 100%;
+    height: auto;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media (max-width:1000px) {
+    .bd-flexitem{
+        width: 32%;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width:780px) {
+    .bd-flexitem{
+        width: 48%;
+    }
+}
+
+@media (max-width:500px) {
+    .bd-flexitem{
+        width: 100%;
+    }
+}
+
+
+/* Footer Section start from here */
+footer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    background-color: var(--lightdark);
+    color: #cccccc;
+}
+
+.ft{
+    width: 86%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+
+/* tagline in the footer */
+
+.tagline p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.tagline p a{
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+.tagline p a:hover{
+    color: var(--lightwhite);
+}
+
+/* footer button */
+
+.ft-btn a{
+    padding: 15px 12px 5px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: #65666C;
+    background-color: var(--smokewhite);
+}
+
+@media (max-width:780px) {
+    .ft{
+        width: 100%;
+        flex-direction: column;
+    }
+    .ft-btn{
+        order: 1;
+        margin-bottom: 20px;
+    }
+    .tagline{
+        order: 2;
+    }
+}

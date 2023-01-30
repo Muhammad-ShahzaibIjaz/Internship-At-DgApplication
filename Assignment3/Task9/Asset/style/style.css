@@ -1,0 +1,342 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+
+
+header{
+    width: 100%;
+    height: auto;
+    background-color: #2C3333;
+    background-image: url("../image/pexels-pixabay-248515.jpg");
+    background-blend-mode:overlay;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 220px;
+}
+
+
+header h1{
+    font-size: 2.5rem;
+}
+
+header p{
+    font-size: 1.3rem;
+    padding: 20px 180px;
+}
+
+@media (max-width:1240px) {
+    header p{
+    padding: 20px 160px;
+    }
+}
+
+@media (max-width:1125px) {
+    header p{
+        padding: 20px 120px;
+    }
+}
+
+@media (max-width:895px) {
+    header p{
+        padding: 20px 80px;
+    }
+}
+
+@media (max-width:815px) {
+    header p{
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width:755px) {
+    header p{
+        padding: 20px 30px;
+    }
+}
+
+header a{
+    position: relative;
+    top: 30px;
+    font-size: 1.3rem;
+    border: 1px solid #2C3333;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    padding: 20px 30px;
+    margin-bottom: 40px;    
+}
+
+header a:hover{
+    color: black;
+    background-color: white;
+}
+
+/* Section1 */
+
+
+.paraContainer{
+    width: 100%;
+    height: auto;
+    padding: 25px 0px;
+    background-color: whitesmoke;
+}
+
+.paraContainer h3{
+    font-size: 2rem;
+}
+
+
+.paraContainer p{
+    text-align: center;
+    font-size: 1.3rem;
+    padding:25px 240px;
+    columns: 250px 2;
+    column-gap: 30px;
+}
+
+
+@media (max-width:1100px) {
+    .paraContainer p{
+        padding: 25px 160px;
+        column-gap: 40px;
+    }
+}
+
+@media (max-width:1009px) {
+    .paraContainer p{
+        column-gap: 50px;
+        padding: 25px 100px;
+    }
+}
+
+@media (max-width:710px) {
+    .paraContainer p{
+        padding: 25px 80px;
+    }
+}
+
+@media (max-width:665px) {
+    .paraContainer p{
+        padding: 25px 55px;
+    }
+}
+
+@media (max-width:615px) {
+    .paraContainer p{
+        padding: 25px 35px;
+    }
+}
+
+/* FlexBox Section */
+
+.flexbox{
+    background-color: #2C3333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 0px;
+}
+
+
+
+.flex-item{
+    width: 19%;
+    height: auto;
+    background-color: whitesmoke;
+    border: none;
+    margin: 0px 8px;
+    transition: transform .2s;
+}
+
+.flex-item:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+@media (max-width:1220px) {
+    .flex-item{
+        width: 25%;
+        height: auto;
+    }
+}
+
+@media (max-width:980px) {
+    .flex-item{
+        width: 30%;
+        height: auto;
+    }
+}
+
+@media (max-width:888px) {
+
+    .flex-item{
+        width: 40%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:777px) {
+    .flex-item{
+        width: 50%;
+    }
+}
+
+@media (max-width:575px) {
+    .flex-item{
+        width:70%
+    }
+}
+
+
+.flex-item a img{
+    width: 100%;
+}
+
+.flex-item a{
+    color: black;
+    text-decoration: none;
+}
+
+
+.flex-item a h3{
+    font-size:1.3rem;
+    margin-top: 40px;
+}
+
+.flex-item a p{
+    font-size: 1.3rem;
+    margin: 40px 25px;
+}
+
+
+/* Mid-Section */
+
+.mid-section{
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    padding: 20px 0px;
+}
+
+.mid-section h3{
+    padding-top: 50px;
+    font-size: 1.5rem;   
+}
+
+.mid-section p{
+    text-align: center;
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 30px 0px;
+    font-size: 1.3rem;
+}
+
+/* Last-Section  */
+
+.last-section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-us{
+    width: 44%;
+    height: auto;
+    background-color: #49b0ff;
+    color: white;
+    padding: 30px 40px;
+}
+
+.contact-us h3{
+    font-size: 1.6rem;
+    padding:40px 0px;
+}
+
+.about{
+    font-size: 1.3rem;
+    padding: 20px 0px;
+}
+
+.contact{
+    font-size: 1.2rem;
+    padding: 27px 0px;
+}
+
+
+.about-us{
+    width: 43.633%;
+    height: auto;
+    color: white;
+    background-color:#2C3333 ;
+    padding: 30px 40px;
+}
+
+@media (max-width:1293px) {
+    .about-us{
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-us{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.about-us h3{
+    font-size: 1.6rem;
+    padding:40px 0px;
+}
+
+.about-us p{
+    font-size: 1.3rem;
+    padding:20px 0px 72px;
+}
+
+/* Footer Section */
+
+footer{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+footer h4{
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+
+footer p{
+    font-size: 1rem;
+}
+
+footer p a{
+    color:#49b0ff;
+    text-decoration: none;
+}
+
+footer p a:hover{
+    color: white;
+    text-decoration: none;
+}

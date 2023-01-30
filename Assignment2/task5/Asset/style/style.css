@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: rgb(132, 208, 238);
+    color: black;
+}
+
+
+/* header Section */
+#title {
+    background-color: rgb(132, 208, 238);
+    color: black;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0px;
+    font-size: 1.4rem;
+}
+
+#description {
+    text-align: center;
+    padding: 35px 0px;
+    font-size: 1.2rem;
+}
+
+
+/* Container Section */
+.container {
+    width: 70%;
+    margin: auto;
+    background-color: rgb(239, 239, 239);
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+@media (max-width:576px) {
+    .container{
+        width: 100%;
+    }
+}
+
+
+/* Form Section */
+#survey-form {
+    text-align: center;
+}
+
+.row-tab {
+    display: block;
+    padding: 20px;
+}
+
+/* Input and Label Section */
+.label-tab {
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    vertical-align: top;
+}   
+
+
+.input-tab {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    padding-left: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 20rem;
+    height: 25px;
+    padding: 3px;
+    border-radius: 3px;
+    border: 1px solid rgb(196, 196, 196);
+}
+
+#Afternoon,
+#Evening{
+    margin-top: 15px;
+}
+
+
+@media (max-width:940px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+        width: 16rem;
+    }   
+}
+
+/* When user monitor max-width is 766px then */
+
+@media (max-width:766px) {
+    
+    .row-tab{
+        padding: 10px;
+    }
+    
+    .label-tab {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+    
+    
+    .input-tab {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding-left: 0px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+        width: 100%;
+    }
+
+}
+
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+    outline: none;
+}
+
+
+
+textarea {
+    resize: none;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 5px;
+    padding: 5px;
+    width: 80%;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+@media (max-width:766px) {
+    textarea {
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+
+/* dropdown Selection Section */
+select {
+    height: 30px;
+    width: 150px;
+    border: 1px solid rgb(196, 196, 196);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.select-tab {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    padding-left: 15px;
+}
+
+#selectbox {
+    padding: 5px;
+}
+
+
+@media (max-width:766px) {
+    .select-tab {
+        display: block;
+        width: 50%;
+        text-align: left;
+        padding-left: 0px;
+    }
+}
+
+#Humbled,
+#Elated,
+#Loved,
+#Enthusiastic{
+    margin-top: 15px;
+}
+
+
+/* Button Section */
+button {
+    width: 80px;
+    height: 40px;
+    font-size: 0.9rem;
+    background-color: rgb(56, 181, 231);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    position: relative;
+    left: -15px;
+}

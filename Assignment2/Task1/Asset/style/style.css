@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&family=Lato:ital,wght@0,300;1,100&family=Poppins:wght@200&family=Raleway:wght@100&display=swap');
+
+
+/* this will make the page margin and padding 0 and background lightgrey */
+* {
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+/* header section */
+
+header h1 {
+    padding: 10px;
+    font-weight: 30;
+    font-size: 2.5rem;
+    color: steelblue;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header h3 {
+    color: green;
+    font-weight: 30;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.img {
+    padding: 10px;
+}
+
+.img img {
+    max-width: auto;
+    height: 18rem;
+}
+
+@media (max-width:320px) {
+    .img img{
+        height: 15rem;
+    }
+}
+
+@media (max-width:270px) {
+    .img img{
+        height: 12rem;
+    }
+}
+
+/* Main content Section */
+.content {
+    font-family: 'Open Sans', sans-serif;
+    padding: 1px 45px;
+    margin: 3px;
+}
+
+
+.points {
+    margin: 10px 0px;
+}
+
+.points p {
+    text-align: justify;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.quote {
+    margin: 10px 0px;
+}
+
+.quote p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+
+/* Footer section */
+footer {
+    margin: 10px;
+    padding: 0 2px;
+
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: blueviolet;
+}
+
+footer p a {
+    color: rgb(23, 154, 205);
+    text-decoration: none;
+}
+
+footer p a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/* this will make text color blue and make text center */
+.blue {
+    color: rgb(113, 113, 227);
+}
+
+.center {
+    text-align: center;
+}

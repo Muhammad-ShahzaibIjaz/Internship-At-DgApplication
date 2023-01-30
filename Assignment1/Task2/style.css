@@ -1,0 +1,90 @@
+img.head{
+    padding: 0 10px;
+    width: 1320px;
+    height: 450px;
+}
+
+h1.bg-blue{
+    color: rgb(3, 130, 180);
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: justify;
+    padding: 0 10px;
+}
+
+span.bg-yellow{
+    background-color: yellow;
+}
+
+span.Auther{
+    padding: 0 450px;
+}
+
+center.body{
+    text-align: justify;
+    padding: 0 450px;
+
+}
+
+.body{
+    text-align: center;
+}
+
+
+button.bg-blue{
+    width: 130px;
+    background-color: rgb(40, 166, 216);
+    color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    line-height: 2.5;
+    border: none;
+}
+
+a.body{
+    padding: 0 560px;
+}
+
+strong.bg-blue{
+    color: skyblue;
+}
+
+.asideContainer img{
+    float: right;
+    width: 18%;
+    padding-right: 100px;
+}
+
+.asideContainer address{
+    font-size: 16px;
+}
+
+.MScientist p{
+    font-size: 20px;
+}
+
+.MScientist img{
+    width: 1320px;
+    height: 200px;
+
+}
+
+h3.bg-blue{
+    color: skyblue;
+}
+
+#field-id{
+    text-decoration: none;
+}
+
+footer{
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(9, 7, 109);
+    line-height: 2;
+    color: white;
+}
