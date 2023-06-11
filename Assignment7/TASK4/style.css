@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&family=Dancing+Script&family=Lato:ital,wght@0,300;1,100&family=Open+Sans:wght@300&family=Poppins:wght@200&family=Raleway:wght@100&family=Roboto:wght@100;300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+
+/* Header Section */
+
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image{
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.image img{
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    
+}
+
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: left;
+    padding: 20px;
+}
+
+.image h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.image p{
+    margin-left: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+
+
+#quote-1 {
+    height: 75px;
+}
+
+#quote-1 p{
+    padding: 12px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+/* Sub-Header Section */
+
+
+.subsection-header{
+    position: relative;
+    left: 120px;
+}
+
+.subsection-header p{
+    line-height : 2em;
+    font-size: 3rem;
+    color: lightgray;
+    font-weight: bold;
+}
+
+
+@media (max-width:520px) {
+    .subsection-header{
+        left: 10vw;
+    }
+}
+
+
+
+/* Content Section */
+#content {
+    display: flex;
+    justify-content: center;
+}
+
+#main-content {
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    font-family: 'Dosis' , sans-serif;
+}
+
+
+.flex-row{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.date-border-top {
+    border-top: 1px solid lightgray;
+    margin-top: 0;
+}
+
+.date {
+    width: 16%;
+    height:auto;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    border-top: 2px solid lightgray;
+    margin: -1px 0 0 0;
+    padding: 4px 5px 6px 0;
+    font-weight: bold;
+}
+
+.desc {
+    width: 75%;
+    background: rgba(220, 220, 220,0.2);
+    padding: 8px 12px 8px 8px;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.desc-border-bottom {
+    border-bottom: 1px solid #ccc;
+}
+
+/* Side-table Section */
+
+#nutshell {
+    font-family: 'Lato' , sans-serif;
+    font-weight:bolder;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+#side-content {
+    width: 30%;
+    height: auto;
+    background-color: white;
+}
+
+#second-image {
+    width: 250px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.info {
+    width: 80%;
+    font-size: 90%;
+    font-family: 'Dosis' , sans-serif;
+    position: relative;
+    margin-bottom: 2em;
+    text-align: center;
+    background-color: white;
+}
+
+
+.th, .info td {
+    border-bottom: 1px solid #dddddd;
+    padding: 0.2em;
+}
+
+
+@media (max-width:720px) {
+    #content{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #main-content{
+        width: 90%;
+        height: auto;
+        margin-bottom: 2em;
+    }
+
+    #side-content{
+        width: 50%;
+        height: auto;
+    }
+
+    #quote-1{
+        height: auto;
+    }
+
+}
+
+
+@media (max-width:440px) {
+    #side-content{
+        width: 70%;
+        height: auto;
+    }   
+}
+
+
+
+
+/* Footer Section */
+
+footer {
+    background-color:#ececec;
+    margin: 50px 50px 10px;
+}
+
+
+@media (max-width:720px) {
+    footer{
+        margin: 50px 20px 10px;
+    }
+}
+
+
+@media (max-width:440px) {
+    footer{
+        margin: 50px 10px 10px;
+    }
+}
+
+.quote {
+    text-align:center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.link-wiki{
+    padding: 20px 0px 5px 0px;
+    text-align:center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+a {
+        color:dodgerblue;
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}

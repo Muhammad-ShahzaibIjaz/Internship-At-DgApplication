@@ -1,0 +1,242 @@
+
+/* margin and padding is zero  */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+
+/* Page Section */
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 55px;
+    border-radius: 4px;
+    background-color: rgb(231, 231, 231);
+    opacity: 0.9;
+}
+
+@media (max-width:720px) {
+    .page{
+        margin: 0;
+    }
+}
+
+
+/* Header section */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.name{
+    padding: 10px;
+    font-size: 4.5rem;
+    font-weight: 30;
+    text-align: center;
+}
+
+.year{
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: 40;
+}
+
+
+.font-large{
+    font-size: 1.8rem;
+    font-weight: 30;
+}
+
+.p-10{
+    margin: 10px 0px;
+}
+
+
+
+@media (max-width:400px) {
+    .name{
+        padding: 5px;
+        font-size: 4rem;
+    }
+
+    .year{
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Content Section */
+.content{
+    width: 89%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h4{
+    text-align: center;
+}
+
+
+/* Intro Section */
+
+.intro{
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 5px 70px;
+    padding: 0px 5px;
+}
+
+
+.intro p{
+    line-height: 1.4;
+}
+
+@media (max-width:720px) {
+    .intro{
+        margin: 5px 10px;
+    }
+}
+
+
+/* Central Section */
+.central-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 70px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+
+img{
+    height: 450px;
+    width: 400px;
+    border-radius: 49%;
+    margin-top: 5px;
+}
+
+
+
+
+@media (max-width:724px) {
+    img{
+        height: 350px;
+        width: 300px;
+    }
+    .central-content{
+        height: 400px;
+        margin: 5px 10px;
+    }
+}
+
+@media (max-width:590px) {
+    img{
+        height: 300px;
+        width: 250px;
+    }
+    .central-content{
+        height: 350px;
+        margin: 5px 10px;
+    }
+}
+
+@media (max-width:516px) {
+    img{
+        height: 200px;
+        width: 150px;
+    }
+    .central-content{
+        height: 250px;
+        margin: 5px 10px;
+    }
+}
+
+
+
+.box{
+    width: 99%;
+    background-color: lightgray;
+    margin-bottom: 5px;
+}
+
+.box p{
+    padding: 10px;
+    text-align: center;
+}
+
+/* Time-line section */
+
+.time-line{
+    margin: 5px 70px;
+}
+.time-line h2{
+    font-size: 1.5rem;
+    font-weight: 150;
+    padding-bottom: 6px;  
+}
+
+@media (max-width:720px) {
+    .time-line{
+        margin: 5px 10px;
+    }
+}
+
+.points{
+    margin: 0 25px;
+    padding: 0 15px;
+    line-height: 1.5;
+}
+
+@media (max-width:420px) {
+    .points{
+        margin: 0 15px;
+        padding: 0 10px;
+    }
+}
+
+/* Link of Wikipedia */
+.wiki-link{
+    margin-top: 12px;
+}
+
+.wiki-link a{
+    color: rgb(12, 119, 161);
+    text-decoration: none;
+}
+
+.wiki-link a:hover{
+    color:black;
+    text-decoration: none;
+}
+
+/* Footer Section */
+
+footer{
+    margin: 5px 60px;   
+}
+
+footer a{
+    color: rgb(4, 129, 179);
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width:720px) {
+    footer{
+        margin: 5px 30px;
+    }
+}

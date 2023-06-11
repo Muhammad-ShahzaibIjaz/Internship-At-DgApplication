@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+/* Header Section */
+
+
+header{
+    height: 90vh;
+    background-color: #2C3333;
+    background-image: url("Images/pexels-pixabay-248515.jpg");
+    background-blend-mode:overlay;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+
+header .image-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .image-button{
+    width: 100%;
+    padding: 30px 0px;
+}
+
+header .image-text h1{
+    padding: 20px 0px;
+    font-size: 2.5rem;
+}
+
+
+header .image-text p{
+    font-size: 1.3rem;
+    padding: 20px 180px 50px;
+}
+
+
+header a{
+    font-size: 1.3rem;
+    border: 1px solid #2C3333;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    padding: 20px 30px;    
+}
+
+header a:hover{
+    color: black;
+    background-color: white;
+    transition: 0.4s ease-in-out;
+}
+
+@media (max-width:980px) {
+    header .image-text p{
+        padding: 20px 40px 30px;
+    }
+}
+
+@media (max-width:346px) {
+    header .image-text p{
+        padding: 10px;
+    }
+}
+
+
+
+/* Section1 */
+
+
+.paraContainer{
+    width: 100%;
+    height: auto;
+    padding: 25px 0px;
+    background-color: whitesmoke;
+}
+
+.paraContainer h3{
+    font-size: 2rem;
+}
+
+
+
+.paraContainer .para-flexbox{
+    display:  flex;
+    justify-content: space-around;
+}
+
+
+.paraContainer .para-flexbox p{
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 25px 98px;
+    line-height: 1.3;
+}
+
+@media (max-width:856px) {
+    .para-flexbox{
+        flex-direction: column;
+    }
+
+    .paraContainer .para-flexbox p{
+        padding: 25px 40px;
+    }
+}
+
+
+@media (max-width:560px) {
+    .paraContainer .para-flexbox p{
+        padding: 25px 10px;
+    }
+}
+
+/* FlexBox Section */
+
+.flexbox {
+    background-color: #2C3333;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+    gap: 15px;
+}
+
+.flex-item {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    text-align: center;
+    border: none;
+    transition: transform 0.2s ease-in;
+}
+
+.flex-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flex-item:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.flex-item h3{
+    width: 100%;
+    font-size:1.3rem;
+    padding-top: 30px;
+}
+
+.flex-item h3 a{
+    color: black;
+    text-decoration: none;
+
+}
+
+.flex-item h3 a:hover{
+    color: gray;
+    transition: color 0.3s;
+}
+
+.flex-item p{
+    font-size: 1.1rem;
+    padding: 40px 25px;
+}
+
+@media (max-width:1120px) {
+    .flexbox{
+        flex-wrap: wrap;
+    }
+    .flex-item{
+        width: 33%;
+    }
+}
+
+
+@media (max-width:660px) {
+    .flex-item{
+        width: 60%;
+    }
+}
+
+@media (max-width:398px) {
+    .flex-item{
+        width: 85%;
+    }
+}
+
+
+
+/* Mid-Section */
+
+.mid-section{
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    padding: 20px 0px;
+}
+
+.mid-section h3{
+    padding-top: 50px;
+    font-size: 1.5rem;   
+}
+
+.mid-section p{
+    text-align: center;
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 30px 0px;
+    font-size: 1.3rem;
+}
+
+/* Last-Section  */
+
+.last-section{
+    display: flex;
+    justify-content: center;
+}
+
+.contact-us{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #49b0ff;
+    color: white;
+    padding: 30px 40px;
+}
+
+.contact-us h3{
+    font-size: 1.6rem;
+    padding:40px 0px;
+}
+
+.about{
+    font-size: 1.3rem;
+    padding: 20px 0px;
+}
+
+.contact{
+    font-size: 1.2rem;
+    padding: 27px 0px;
+}
+
+
+.about-us{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: #2C3333;
+    padding: 30px 40px
+}
+
+.about-us h3{
+    font-size: 1.6rem;
+    padding:40px 0px;
+}
+
+.about-us p{
+    font-size: 1.3rem;
+    padding:20px 0px 72px;
+}
+
+
+@media (max-width:800px) {
+    .last-section{
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Footer Section */
+
+footer{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+footer h4{
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+
+footer p{
+    font-size: 1rem;
+}
+
+footer p a{
+    color:#49b0ff;
+    text-decoration: none;
+}
+
+footer p a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width:382px) {
+    footer{
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}

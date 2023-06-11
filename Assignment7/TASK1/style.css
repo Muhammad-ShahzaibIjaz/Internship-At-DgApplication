@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&family=Lato:ital,wght@0,300;1,100&family=Poppins:wght@200&family=Raleway:wght@100&display=swap');
+
+/* Set margin and padding to 0 and apply a light gray background to the page */
+ * {
+     margin: 0;
+     padding: 0;
+     background-color: lightgray;
+}
+/* Header section */
+ header {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 10px;
+}
+ header h1 {
+     font-weight: 30;
+     font-size: 2.5rem;
+     color: steelblue;
+     font-family: 'Open Sans', sans-serif;
+}
+ header h3 {
+     color: green;
+     font-weight: 30;
+     font-size: 1.3rem;
+     font-family: 'Open Sans', sans-serif;
+}
+ .img {
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+ .img img {
+     width: auto;
+     height: 18rem;
+}
+ @media (max-width: 320px) {
+     .img img {
+         height: 15rem;
+    }
+}
+ @media (max-width: 270px) {
+     .img img {
+         height: 12rem;
+    }
+}
+/* Main content Section */
+.content {
+     font-family: 'Open Sans', sans-serif;
+     padding: 1px 45px;
+     margin: 3px;
+}
+ .points {
+     margin: 10px 0px;
+}
+ .points ul li {
+     text-align: justify;
+     line-height: 1.5;
+     font-family: 'Open Sans', sans-serif;
+}
+.quote {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     margin: 10px 0px;
+}
+ .quote :nth-child(2){
+     margin-top: 10px;
+}
+ .quote q {
+     font-family: 'Open Sans', sans-serif;
+     font-size: 1.3rem;
+}
+/* Footer section */
+ footer {
+     margin: 10px 20px;
+     padding: 0 2px;
+     align-self: flex-start;
+}
+ footer p {
+     font-size: 1.2rem;
+     color: blueviolet;
+}
+ footer p a {
+     color: rgb(23, 154, 205);
+     text-decoration: none;
+}
+ footer p a em:hover{
+     color: blueviolet;
+     text-decoration: none;
+}
+/* Make text color blue and center the text */
+ .center {
+    text-align: center;
+}
+/* New Flexbox classes */
+ .flex-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+ .flex-item {
+     margin: 10px 0px;
+}
