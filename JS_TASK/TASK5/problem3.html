@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lunasima:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Lunasima', sans-serif;
+        }
+        input{
+            width: 30%;
+            height: 30px;
+        }
+        button{
+            width: 20%;
+            height: 40px;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No: 3</h1>
+    <h3>Problem Statement:</h3>
+    <p>Write a program in JS to Input First and Last name from the user. Indicate the
+        Vowels used in full name, count total characters and number of vowels used in
+        the name.</p>
+    <h3>Solution:</h3>
+    <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex;flex-direction: column;gap: 1rem;flex-basis: 49%;align-items: flex-start;">
+            <label>Enter First Name:</label>
+            <input type="text" id="input1">
+            <label>Enter Last Name:</label>
+            <input type="text" id="input2">
+            <button id="generateBtn" >Check Name</button>
+        </div>
+        <div class="table" style="flex-basis: 49%;">
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        //FUNCTION THAT VALIDATE THE INPUT IS PROPER ALPHABETIC MEANS IT DON'T CONTAIN ANY SPECAIL CHARACTER BECAUSE THEIR IS NOT FULLNAME WHICH CONTAIN SPECIAL CHARACTER
+        function isValidString(input){
+            let format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+            return format.test(input) ? true : false;
+        }
+        //FUNCTION THAT VALIDATE THE INPUT IS EMPTY OR NOT
+        function isEmpty(input){
+            return input == '' ? true : false;
+        }
+        //FUNCTION THAT VALIDATE THE VOWEL CHARACTER
+        function isVowel(input){
+            switch(input){
+                case 'a':
+                    return true;
+                case 'e':
+                    return true;
+                case 'i':
+                    return true;
+                case 'o':
+                    return true;
+                case 'u':
+                    return true;
+                default:
+                    return false;
+            }
+                
+        }
+        //FUNCTION THAT COUNT AND CHECK THAT IT CONTAIN ANY VOWEL CHARACTER
+        function checkAndCountVowel(fullName){
+            let isVowelExist = false;
+            let countVowel = 0;
+            for(let i = 0; i < fullName.length; i++){
+                if(isVowel(fullName[i].toLowerCase())){
+                    isVowelExist = true;
+                    countVowel += 1;
+                }
+            }
+            return [isVowelExist,countVowel,fullName.length];
+        }
+        //FUNCTION THAT VALIDATE THE USER INPUT
+        function getInputValue(){
+            let firstName = document.getElementById('input1').value;
+            let lastName = document.getElementById('input2').value;
+            if(isEmpty(firstName) || isEmpty(lastName)){
+                return null;
+            }
+            else{
+                let fullName = firstName.toString() + lastName.toString();
+                return fullName;
+            }
+        }
+        //BUTTON EVENT LISTENER        
+        document.getElementById('generateBtn').addEventListener('click',function(){
+            let input = getInputValue();
+            if(input){
+                alert('Input is Correct');
+                let outputs = checkAndCountVowel(input);
+                document.getElementById('result').innerText = `The full Name is ${input} and it's ${outputs[0]} that it contain vowel and it contain total ${outputs[2]} character in which ${outputs[1]} are vowels.`;
+            }
+            else{
+                alert('Enter Valid Input');
+            }
+        });
+    </script>
+</body>
+</html>

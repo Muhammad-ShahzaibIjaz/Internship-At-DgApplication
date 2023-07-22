@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem 2</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    *{
+      font-family: 'VT323', monospace;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>JAVASCRIPT PROBLEM 3</h1>
+    <p>Write a Javascript program to input electricity unit charge and calculate the total
+        electricity bill according to the given condition:</p>
+    <ol type="a">
+        <li>For first 50 units Rs. 0.50/unit</li>
+        <li>For next 100 units Rs. 0.75/unit</li>
+        <li>For next 100 units Rs. 1.20/unit</li>
+        <li>For unit above 250 Rs. 1.50/unit</li>
+        <li>An additional surcharge of 20% is added to the bill.</li>
+    </ol>
+    <p>Show the Message “Your Total Bill is 2000 Rs.</p>
+    <h3>It's Solution:</h3>
+    <div style="display: flex;flex-direction: column;gap: 1rem;align-items: center;">
+      <div>
+        <label for="firstInput">Enter Electricity Unit Charges:</label>
+        <input type="text" name="firstInput" id="input1">
+      </div>
+      <div>
+        <input type="text" name="firstInput" id="output" style="width: 320px;" disabled>
+      </div>
+      <button id="calculateBtn">CLICK FOR CALCULATION</button>
+    </div>
+    <script>
+        document.getElementById('calculateBtn').addEventListener('click',function(){
+            let units = Number(document.getElementById('input1').value);
+            if(!isNaN(units) && units != ''){
+                document.getElementById('output').value = "Your Total Bill is " + (calculateElectricityBill(units)).toFixed(2) + " Rs";
+            }
+            else{
+                alert('ENTER A VALID INPUT');
+            }
+        });
+        function calculateElectricityBill(units) {
+            let totalBill = 0;
+            if (units <= 50) {
+                totalBill = units * 0.50;
+            } else if (units <= 150) {
+                totalBill = 50 * 0.50 + (units - 50) * 0.75;
+            } else if (units <= 250) {
+                totalBill = 50 * 0.50 + 100 * 0.75 + (units - 150) * 1.20;
+            } else {
+                totalBill = 50 * 0.50 + 100 * 0.75 + 100 * 1.20 + (units - 250) * 1.50;
+            }
+            totalBill += totalBill * 0.20;
+            return totalBill;
+        }
+    
+
+    </script>
+</body>
+</html>

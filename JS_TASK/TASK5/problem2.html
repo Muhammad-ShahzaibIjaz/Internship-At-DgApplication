@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lunasima:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Lunasima', sans-serif;
+        }
+        input{
+            width: 30%;
+            height: 30px;
+        }
+        button{
+            width: 20%;
+            height: 40px;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No: 2</h1>
+    <h3>Problem Statement:</h3>
+    <p>Write a program in JS to input two values from the user. From the first value show
+        table of that number to 2nd number (ending multiplier for that number).
+        e.g 1st * 2nd = answer;</p>
+    <h3>Solution:</h3>
+    <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex;flex-direction: column;gap: 1rem;flex-basis: 49%;align-items: flex-start;">
+            <label>Enter First Number:</label>
+            <input type="number" id="input1">
+            <label>Enter Second Number:</label>
+            <input type="number" id="input2">
+            <button id="generateBtn" >Generate table</button>
+        </div>
+        <div class="table" style="display: none;flex-basis: 49%;">
+            <h4>The Generated Table is below:</h4>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        // FUNCTION THAT CHECK THE GIVEN INPUT IS CONVERTABLE OR NOT
+        function isNumber(input){
+            return (!isNaN(input)) ? true : false;
+        }
+        //FUNCTION THAT CHECK INPUT IS EMPTY OR NOT
+        function isEmpty(input){
+            return input == '' ? true : false;
+        }
+        //FUNCTION THAT GENERATE THE TABLE
+        function generateTable(firstValue, secondValue){
+            for(let i = 1; i <= secondValue; i++){
+                document.getElementById('result').innerHTML += `${firstValue} X ${i} = ${firstValue*i} <br>`;
+            }
+        }
+        //FUNCTION THAT VALIDATE THE INPUT FROM USER
+        function getInputValue(){
+            let firstValue = document.getElementById('input1').value;
+            let secondValue = document.getElementById('input2').value;
+            if(isEmpty(firstValue) || isEmpty(secondValue) || !isNumber(firstValue) || !isNumber(secondValue)){
+                return null;
+            }
+            else{
+                return [Number(firstValue),Number(secondValue)];
+            }
+        }
+        //GENERATE BUTTON EVENT LISTENER        
+        document.getElementById('generateBtn').addEventListener('click',function(){
+            let inputs = getInputValue();
+            if(inputs){
+                let table = document.querySelector('.table');
+                table.style.display = 'block';
+                generateTable(inputs[0],inputs[1]);
+            }
+            else{
+                alert('Enter Valid Input');
+            }
+        });
+    </script>
+</body>
+</html>

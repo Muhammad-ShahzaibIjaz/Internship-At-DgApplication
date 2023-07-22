@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem 1</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    *{
+      font-family: 'VT323', monospace;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>JAVASCRIPT PROBLEM 1</h1>
+    <p>A student makes his timetable for reading, eating and sleeping, which is as follows.
+      Eating: 08:00 AM - 08:30 AM, 01:30 PM - 2:00 PM , 08:00 PM - 08:30 PM
+      Reading: 08:30 AM - 01:30 PM, 04:30 PM -08:00 PM
+      Sleeping: 10:00 PM - 05:30 AM , 02:00 PM - 03:30 PM.
+      Write a program to input time from the user. On the basis of time, show the message
+      What is the activity of user at that time.
+      You can use Boolean variables
+      var isReading = true;
+      var isSleeping = false;</p>
+    <h3>It's Solution:</h3>
+    <div style="display: flex;flex-direction: column;gap: 1rem;align-items: center;">
+      <input type="time" id="timeInput">
+      <p id="output"></p>
+      <button id="checkBtn">Check Activity</button>
+    </div>
+  
+    <script>
+      document.getElementById('checkBtn').addEventListener('click',function(){
+        let userTime = document.getElementById("timeInput").value;
+        if(userTime != '' ){
+          let output = `User activity at, ${userTime} is ${getActivity(userTime)}`;
+          document.getElementById("output").innerText = output;
+        }
+      });
+
+      function getActivity(time){
+        let hours = parseInt(time.slice(0,2));
+        let minutes = parseInt(time.slice(3,5));
+        let totalMinutes = hours * 60 + minutes;
+
+        if((totalMinutes >= 480 && totalMinutes < 510) || (totalMinutes >= 810 && totalMinutes < 840) || (totalMinutes >= 1200 && totalMinutes < 1230)){
+          return 'Eating';
+        }
+        else if((totalMinutes >= 510 && totalMinutes < 810) || (totalMinutes >= 990 && totalMinutes < 1200)){
+          return 'Reading';
+        }
+        else if(((totalMinutes >= 1320 && totalMinutes <= 1440)|| (totalMinutes > 330)) || 
+          (totalMinutes >= 840 && totalMinutes < 930)){
+            return 'Sleeping';
+        }
+        else{
+          return 'No activity scheduled at this time.';
+        }
+      }
+    </script>
+</body>
+</html>

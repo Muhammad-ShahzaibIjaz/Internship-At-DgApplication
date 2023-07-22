@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem No: 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No 2</h1>
+    <h3>Problem Statement:</h3>
+    <p>color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+        order = ["th","st","nd","rd"];
+        Write a JavaScript program to display the colors in the following way:
+        "1st choice is Blue."
+        "2nd choice is Green."
+        "3rd choice is Red."</p>
+    <h3>Solution:</h3>
+    <div>
+        <p id="output"></p>
+        <button id="display">Display Colors</button>
+    </div>
+    <script>
+        function displayColor(colors, order){
+            let j = 1;
+            for(let i = 0; i < colors.length; i++){
+                document.getElementById('output').innerHTML += `${i+1}${order[j]} choice is ${colors[i]}. <br> `;
+                if(j == 0 || j == 3){
+                    j = 0;
+                }
+                else{
+                    j += 1;
+                }
+            }
+        }
+
+        let colors = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+        let order = ["th","st","nd","rd"];
+        document.getElementById('display').addEventListener('click',function(){
+            displayColor(colors, order);
+        });
+    </script>
+</body>
+</html>

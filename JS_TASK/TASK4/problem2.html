@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Ubuntu', sans-serif;
+        }
+        div{
+            margin: 20px 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        input{
+            width: 15%!important;
+        }
+        button{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No 2</h1>
+    <p>Write a program that determines a student's grade. The program will input three
+        types of scores (quiz, mid-term, and final scores) and determine the grade based on the
+        following rules:
+        Quiz total : out of 20
+        Mid Term : out of 30
+        Finals : out of 50
+        -if the average score =90% => grade=A
+        -if the average score >= 70% and <90% => grade=B
+        -if the average score >= 50% and <70% => grade=C
+        -if the average score < 50% => grade=F</p>
+    <div>
+        <label for="quiz">Enter Quiz Marks:</label>
+        <input id="quiz" type="number">
+    </div>
+    <div>
+        <label for="mid">Enter Mid Term Marks:</label>
+        <input id="mid" type="number">
+    </div>
+    <div>
+        <label for="final">Enter Final Term Marks:</label>
+        <input id="final" type="number">
+    </div>
+    <div>
+        <label for="grade">Your Grade:</label>
+        <input id="grade" type="text">
+    </div>
+
+    <button id="calculateBtn">CALCULATE</button>
+
+    <script>
+        // FUNCTION THAT VALIDATE THE INPUT IS NUMBER OR NOT
+        function isNumber(input) {
+            return !isNaN(input);
+        }
+        // FUNCTION THAT VALIDATE THE QUIZ MARKS SHOULD BE LESS THAN 21 AND MORE THAN -1
+        function validQuizMarks(input){
+            return input > -1 && input < 21 ? true : false ; 
+        }
+        // FUNCTION THAT VALIDATE THE MIDS MARKS SHOULD BE LESS THAN 31 AND MORE THAN -1
+        function validMidMarks(input){
+            return input > -1 && input < 31 ? true : false ; 
+        }
+        // FUNCTION THAT VALIDATE THE FINAL MARKS SHOULD BE LESS THAN 51 AND MORE THAN -1
+        function validFinalMarks(input){
+            return input > -1 && input < 51 ? true : false ; 
+        }
+        //FUNCTION THAT CHECK THE OVERALL INPUT VALIDATION AND THEN RETURN THE VALUES IN ARRAY
+        function checkInput(){
+            let quizMarks = document.getElementById('quiz').value;
+            let midMarks = document.getElementById('mid').value;
+            let finalMarks = document.getElementById('final').value;
+            if(isNumber(quizMarks) && isNumber(midMarks) && isNumber(finalMarks) && validQuizMarks(Number(quizMarks)) && validMidMarks(Number(midMarks)) && validFinalMarks(Number(finalMarks))){
+                return [Number(quizMarks) , Number(midMarks) , Number(finalMarks)];
+            }
+            else{
+                alert('Enter valid Input');
+            }
+        }
+        // FUNCTION THAT DISPLAY THE CALCULATED GRADE
+        function displayOutput(output){
+            document.getElementById('grade').value = output;
+        }
+        
+        // FUNCTION THAT CALCULATE THE GRADES
+        function calculateGrade(){
+            let inputs = checkInput();
+            let percentage = (inputs[0] + inputs[1] + inputs[2]);
+            if(percentage >= 90 && percentage < 101){
+                displayOutput('A');
+            }
+            else if(percentage >= 70 && percentage < 90){
+                displayOutput('B');
+            }
+            else if(percentage >= 50 && percentage < 70){
+                displayOutput('C');
+            }
+            else{
+                displayOutput('F');
+            }
+        }
+
+        document.querySelector('#calculateBtn').addEventListener('click', function(){
+            calculateGrade();
+        });
+        
+    </script>
+</body>
+</html>

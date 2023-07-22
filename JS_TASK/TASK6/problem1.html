@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem No: 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No 1</h1>
+    <h3>Problem Statement:</h3>
+    <p>Write a JavaScript code to input some characters from the user, insert them into
+array. Change those characters in alternate case and display all the elements of the array.</p>
+    <h3>Solution:</h3>
+    <div>
+        <label>Enter the character:</label>
+        <input type="text" id="input">
+        <p id="output"></p>
+        <button id="display">Display Output</button>
+    </div>
+    <script>
+        //ARRAY THAT CONTAIN THE USER INPUT IN ALTERNATIVE CASE
+        let inputs = [];
+        //FUNCTION THAT VALIDATE THE INPUT DON'T CONTAIN SPECIAL CHARACTER
+        function isValidCharacter(input){
+            let format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+            return format.test(input) ? false : true;
+        }
+        function isEmpty(input){
+            return input == '' ? true : false;
+        }
+        //FUNCTION THAT VALIDATE THE INPUT IS IN UPPERCASE
+        function isUpperCase(character) {
+          return character === character.toUpperCase() ? true : false;
+        }
+
+        //FUNCTION THAT HANDLE ALL INPUT VALIDATIONS
+        function getInputValue(){
+            let input = document.getElementById('input').value;
+            if(isValidCharacter(input) && !isEmpty(input)){
+                for(let j = 0; j < input.length; j++){
+                    if(isUpperCase(input)){
+                        let convertedInput = input[j].toLowerCase();
+                        inputs.push(convertedInput.toString());
+                    }
+                    else{
+                        let convertedInput = input[j].toUpperCase();
+                        inputs.push(convertedInput.toString());
+                    }
+                }
+                return true
+            }
+            else{
+                alert('Enter Valid Input');
+                return false;
+            }
+        }
+        //FUNCTION THAT DISPLAY OUTPUT
+        function displayOutput(){
+                document.getElementById('output').innerHTML = inputs;
+        }
+
+        document.getElementById('display').addEventListener('click',function(){
+            if(getInputValue()){
+                displayOutput();
+            }
+        });
+    </script>
+</body>
+</html>

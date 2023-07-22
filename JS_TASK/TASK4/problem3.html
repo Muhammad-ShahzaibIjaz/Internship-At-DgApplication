@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No 3</h1>
+    <p>Write a program to Input a single character from the user, show the message “You
+have pressed vowel char” using switch statement. If the character is vowel otherwise
+Show message “char is not a vowel”.</p>
+    <div>
+        <label for="input">Enter the Character:</label>
+        <input id="input" type="text" onkeyup="checkChar()">
+    </div>
+    <p id="output"></p>
+
+    <script>
+        function checkInput(){
+            let inputText = document.getElementById('input');
+            let input = (inputText.value).toString();
+            if(input != "" && typeof((input)) === 'string'){
+                return (input[input.length - 1]).toLowerCase();
+            }
+            else{
+                return 'NULL';
+            }
+        }
+
+        function displayOutput(value){
+            if(value){
+                document.getElementById('output').innerText = 'You have Pressed vowel char';
+            }
+            else{
+                document.getElementById('output').innerText = 'char is not vowel';
+            }
+        }
+
+        function checkVowel(input){
+            switch(input){
+                    case 'a':
+                        displayOutput(true);
+                        break;
+                    case 'e':
+                        displayOutput(true);
+                        break;
+                    case 'i':
+                        displayOutput(true);
+                        break;
+                    case 'o':
+                        displayOutput(true);
+                        break;
+                    case 'u':
+                        displayOutput(true);
+                        break;
+                    default:
+                        displayOutput(false);
+                        break;
+            }
+        }
+
+        function checkChar(){
+            let input = checkInput();
+            if(input != 'NULL'){
+                checkVowel(input);
+            }
+        }
+        
+    </script>
+</body>
+</html>

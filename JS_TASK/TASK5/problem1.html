@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lunasima:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Lunasima', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No: 1</h1>
+    <h3>Problem Statement:</h3>
+    <p>Write a JavaScript program to print prime numbers from 1 to 50 using <br>
+        i) For Loop <br>
+        ii) while Loop <br>
+        iii) do while Loop <br>
+        iv) forEach loop</p>
+    <h3>Solution:</h3>
+    <div>
+        <h4>1. With For loop</h4>
+        <p id="result1"></p>
+    </div>
+    <div>
+        <h4>2. With While loop</h4>
+        <p id="result2"></p>
+    </div>
+    <div>
+        <h4>3. With do-While loop</h4>
+        <p id="result3"></p>
+    </div>
+    <div>
+        <h4>1. With ForEach loop</h4>
+        <p id="result4"></p>
+    </div>
+    <script>
+        //FUNCTION THAT CHECK THE NUMBER IS PRIME OR NOT
+        function checkPrime(number){
+            if(number == 0 || number == 1){
+                return false;
+            }
+            for(let i = 2; i <= number / 2; i++){
+                if(number%i == 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        //LOGIC OF DISPLAYING PRIME BETWEEN 1 TO 50 USING FOR LOOP
+        for(let i = 1; i <= 50; i++){
+            if(checkPrime(i)){
+                document.getElementById('result1').innerHTML += `${i} <br>`;
+            }
+        }
+        //LOGIC OF DISPLAYING PRIME BETWEEN 1 TO 50 USING WHILE LOOP
+        let i = 1;
+        while(i <= 50){
+            if(checkPrime(i)){
+                document.getElementById('result2').innerHTML += `${i} <br>`;
+            }
+            i++;
+        }
+        //LOGIC OF DISPLAYING PRIME BETWEEN 1 TO 50 USING DO WHILE LOOP
+        let j = 1;
+        do{
+            if(checkPrime(j)){
+                document.getElementById('result3').innerHTML += `${j} <br>`;
+            }
+            j++;
+        }while(j < 51);
+        //LOGIC OF DISPLAYING PRIME BETWEEN 1 TO 50 USING FOREACH LOOP
+        let numbers = Array.from({length: 50}, (_, i) => i + 1);
+        numbers.forEach(number => {
+            if(checkPrime(number)){
+                document.getElementById('result4').innerHTML += `${number} <br>`;
+            }
+        });
+    </script>
+</body>
+</html>

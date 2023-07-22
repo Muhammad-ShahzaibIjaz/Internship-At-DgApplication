@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem No. 4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Tektur', cursive;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No: 4</h1>
+    <h3>Problem Statement:</h3>
+    <p style="line-height: 2;">Write a JavaScript program to implement the Following Menu
+        a) Insert Element in Array
+        b) Delete Element from Array
+        c) Print all the elements in that Array
+        d) Sort array by the largest element</p>
+    <h3>Solution:</h3>
+    <p id="arrayPrint" style="margin-top: 20px;"></p>
+    <div>
+        <input type="number" id="input">
+        <button id="insertBtn">Insert</button>
+        <button id="delBtn">Delete</button>
+        <button id="sortBtn">Sort</button>
+    </div>
+
+    <script>
+        // 11, 10, 20, 11, 25, 1, 10, 30, 25, 11,25,30
+        let arr = [11,10,20];
+        document.getElementById('arrayPrint').innerHTML = `The Array is [${arr}]`;
+        //INSERT BUTTON EVENT LISTENER
+        document.getElementById('insertBtn').addEventListener('click',function(){
+            let insertElement = document.getElementById('input').value;
+            if(insertElement == '' || isNaN(insertElement)){
+                alert('Enter a Valid Input');
+            }
+            else{
+                arr.push(Number(insertElement));
+                document.getElementById('arrayPrint').innerHTML = `The Array is [${arr}]`;
+            }
+        });
+        //DELETE BUTTON EVENT LISTENER
+        document.getElementById('delBtn').addEventListener('click',function(){
+            let delElementIndex = document.getElementById('input').value;
+            if(delElementIndex == '' || isNaN(delElementIndex) || (Number(delElementIndex) < 0 || Number(delElementIndex) > arr.length)){
+                alert('Enter a Valid Input');
+            }
+            else{
+                arr.splice(Number(delElementIndex) - 1 , 1);
+                document.getElementById('arrayPrint').innerHTML = `The Array is [${arr}]`;
+            }
+        });
+        //SORT BUTTON EVENT LISTENER
+        document.getElementById('sortBtn').addEventListener('click',function(){
+            if(arr.length > 0){
+                mergeSort(arr,0, arr.length - 1);
+                document.getElementById('arrayPrint').innerHTML = `The Array is [${arr}]`;
+            }
+            else{
+                alert('There is No ELement in Array');
+            }
+        });
+
+        //MERGE SORT FUNCTION
+        function merge(array, start, mid, end){
+            const firstHalf = mid - start + 1;
+            const secondHalf = end - mid;
+
+            let leftSubArray = [];
+            let rightSubArray = [];
+
+            for(let i = 0; i < firstHalf; i++){
+                leftSubArray.push(array[i+start]);
+            }
+            for(let j = 0; j < secondHalf; j++){
+                rightSubArray.push(array[mid+j+1]);
+            }
+
+            leftSubArray.push(-99999999);
+            rightSubArray.push(-99999999);
+
+            let i = 0, j = 0;
+            for(let k = start; k <= end; k++){
+                if(leftSubArray[i] >= rightSubArray[j]){
+                    array[k] = leftSubArray[i];
+                    i += 1;
+                }
+                else{
+                    array[k] = rightSubArray[j];
+                    j += 1;
+                }
+            }
+        }
+
+        function mergeSort(array, start , end){
+            if(start < end){
+                let mid = Math.floor((start+end)/2);
+                mergeSort(array,start,mid);
+                mergeSort(array,mid+1, end);
+                merge(array,start,mid,end);
+            }
+        }
+
+    </script>
+</body>
+</html>

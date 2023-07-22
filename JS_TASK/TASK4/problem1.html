@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Ubuntu', sans-serif;
+            padding: 0;
+        }
+        div{
+            margin: 20px 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        input[type='number']{
+            height: 25px;
+            padding: 5px 15px;
+        }
+        button{
+            padding: 10px 20px;
+        }
+        .calculator{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+        }
+        .inputs{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem No 1</h1>
+    <p>Write JavaScript code to check operation from the radio button, when user click on
+        Compute it perform the desired operation by on 1st and 2nd number and show the
+        Result in 3rd textbox.</p>
+    
+    <div class="calculator">
+        <div>
+            <div class="inputs">
+                <label for="addition">Addition</label>
+                <input class="operator" type="checkbox" value="addition" id="addition">
+            </div>
+            <div class="inputs">
+                <label for="subtraction">Subtraction</label>
+                <input class="operator" type="checkbox" value="subtraction" id="subtraction">
+            </div>
+            <div class="inputs">
+                <label for="multiplication">Multiplication</label>
+                <input class="operator" type="checkbox" value="multiplication" id="multiplication">
+            </div>
+            <div class="inputs">
+                <label for="division">Division</label>
+                <input class="operator" type="checkbox" value="division" id="division">
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="firstValue">Enter First Value:</label>
+                <input id="firstValue" type="number">
+            </div>
+            <div>
+                <label for="secondValue">Enter Second Value:</label>
+                <input id="secondValue" type="number">
+            </div>
+            <div>
+                <label for="output">Result:</label>
+                <input id="output" type="number" readonly>
+            </div>
+            <button id="calculateBtn">CALCULATE</button>
+        </div>
+    </div>
+
+
+    <script>
+        // FUNCTION THAT VALIDATE THE INPUT IS NUMBER OR NOT
+        function isNumber(input) {
+            return !isNaN(input);
+        }
+        
+        function checkOperation() {
+            let checkboxes = document.querySelectorAll('.operator');
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    return (checkboxes[i].value).toString();
+                }
+            }
+            return 'NULL';
+        }
+
+        
+        //FUNCTION THAT CHECK THE OVERALL INPUT VALIDATION AND THEN RETURN THE VALUES IN ARRAY
+        function checkInput(){
+            let firstValue = document.getElementById('firstValue').value;
+            let secondValue = document.getElementById('secondValue').value;
+            let operator = checkOperation();
+            if(isNumber(firstValue) && isNumber(secondValue) && operator != 'NULL'){
+                return [Number(firstValue) , Number(secondValue) , operator]
+            }
+            else{
+                alert('Enter valid Input or Operator is not selected');
+                return null;
+            }
+        }
+        // FUNCTION THAT DISPLAY THE CALCULATED GRADE
+        function displayOutput(output){
+            document.getElementById('output').value = output;
+        }
+        
+        // FUNCTION THAT CALCULATE THE GRADES
+        function calculateResult(){
+            let inputs = checkInput();
+            if(inputs){
+                if(inputs[2] == 'addition'){
+                    displayOutput(inputs[0] + inputs[1]);
+                }
+                else if(inputs[2] == 'subtraction'){
+                    displayOutput(inputs[0] - inputs[1]);
+                }
+                else if(inputs[2] == 'multiplication'){
+                    displayOutput(inputs[0] * inputs[1]);
+                }
+                else{
+                    displayOutput(inputs[0] / inputs[1]);
+                }
+            }
+        }
+
+        document.querySelector('#calculateBtn').addEventListener('click', function(){
+            calculateResult();
+        });
+        
+    </script>
+</body>
+</html>

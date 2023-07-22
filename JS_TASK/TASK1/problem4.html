@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Values</title>
+</head>
+<body>
+  <input type="number" id="inputX" placeholder="Enter value for X">
+  <input type="number" id="inputY" placeholder="Enter value for Y">
+  <button id="orderButton">Order</button>
+
+  <script>
+    document.getElementById("orderButton").addEventListener("click", function() {
+      let x = Number(document.getElementById("inputX").value);
+      let y = Number(document.getElementById("inputY").value);
+      order(x, y);
+    });
+    
+    function order(x, y) {
+        if (x > y) {
+            let tmp = x;
+            x = y;
+            y = tmp;
+        }
+        console.log("Your values are " + x + " and " + y);
+    }
+  </script>
+</body>
+</html>

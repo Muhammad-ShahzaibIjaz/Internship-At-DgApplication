@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem 2</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    *{
+      font-family: 'VT323', monospace;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>JAVASCRIPT PROBLEM 2</h1>
+    <p>Write Javascript code to input two values from the user, check the types of
+        the input values, add both the values and display the result.</p>
+    <h3>It's Solution:</h3>
+    <div style="display: flex;flex-direction: column;gap: 1rem;align-items: center;">
+      <div>
+        <label for="firstInput">Input No: 1</label>
+        <input type="text" name="firstInput" id="input1">
+      </div>
+      <div>
+        <label for="firstInput">Input No: 2</label>
+        <input type="text" name="firstInput" id="input2">
+      </div>
+      <div>
+        <label for="firstInput">Output:</label>
+        <input type="text" name="firstInput" id="output" disabled>
+      </div>
+      <button id="addBtn">CLICK FOR OUTPUT</button>
+    </div>
+  
+    <script>
+      document.getElementById('addBtn').addEventListener('click',function(){
+        let input1 = document.getElementById('input1').value;
+        let input2 = document.getElementById('input2').value;
+        if(input1 != '' || input2 != ''){
+            let output = Number(input1) + Number(input2); 
+            if(!isNaN(output)){
+                document.getElementById('output').value = output;
+            }
+            else{
+                alert('ENTER THE VALID INPUT');
+                clearField();
+            }
+        }
+        else{
+            alert('INPUT SHOULD NOT BE EMPTY');
+            clearField();
+        }
+      });
+
+      function clearField(){
+        document.getElementById('input1').value = '';
+        document.getElementById('input2').value = '';
+        document.getElementById('output').value = '';
+      }
+
+      function getActivity(time){
+        let hours = parseInt(time.slice(0,2));
+        let minutes = parseInt(time.slice(3,5));
+        let totalMinutes = hours * 60 + minutes;
+
+        if((totalMinutes >= 480 && totalMinutes < 510) || (totalMinutes >= 810 && totalMinutes < 840) || (totalMinutes >= 1200 && totalMinutes < 1230)){
+          return 'Eating';
+        }
+        else if((totalMinutes >= 510 && totalMinutes < 810) || (totalMinutes >= 990 && totalMinutes < 1200)){
+          return 'Reading';
+        }
+        else if(((totalMinutes >= 1320 && totalMinutes <= 1440)|| (totalMinutes > 330)) || 
+          (totalMinutes >= 840 && totalMinutes < 930)){
+            return 'Sleeping';
+        }
+        else{
+          return 'No activity scheduled at this time.';
+        }
+      }
+    </script>
+</body>
+</html>
