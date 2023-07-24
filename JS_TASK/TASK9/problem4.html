@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Problem No 4</h1>
+    <p>Implement a multiple-choice question system for an institute. Each
+        question must have 4 options to choose. When one option is chosen, there is
+        no permission to change the answer for that question. At the end of Quiz,
+        show a button to show the result in following way. If obtained marks are
+        greater than half of the original, show a popup message “Success!! You have
+        passed the exam” otherwise show “Oops!! You are Failed. Better Luck next
+        time message”.
+        Total Questions:20
+        Attemped:15
+        Not Attemped:05
+        Correct:10
+        Wrong:05
+        Marks:05</p>
+    <h3>Solution:</h3>
+    <div>
+        <div class="question">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        function handleRadioChange(){
+            const radios = document.getElementsByName('group');
+            let hasSelected = false;
+
+            for(let i = 0; i < radios.length; i++){
+                if(radios[i].checked){
+                    hasSelected = true;
+                    break;
+                }
+            }
+
+            if(hasSelected){
+                for (let i = 0; i < radios.length; i++) {
+                    radios[i].disabled = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
