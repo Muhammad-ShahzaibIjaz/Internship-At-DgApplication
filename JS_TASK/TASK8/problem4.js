@@ -21,8 +21,7 @@ const cityRecords = [
     { name: "Dallas", population: 1343573 },
     { name: "San Jose", population: 1030119 }
 ];
-  
+
 
 let maxCharsAndPopulationCity = findCityWithMaxCharsAndPopulation(cityRecords);
 console.log(`The Max Characer Contain City is ${maxCharsAndPopulationCity.name} and it's population is ${maxCharsAndPopulationCity.population}`);
-  
